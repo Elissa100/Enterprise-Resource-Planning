@@ -3,10 +3,11 @@ package com.bruce.erp.controller;
 import com.bruce.erp.dto.employee.EmployeeRequest;
 import com.bruce.erp.dto.employee.EmployeeResponse;
 import com.bruce.erp.dto.employee.EmployeeUpdateRequest;
-import com.bruce.erp.model.entity.Employee;
+import com.bruce.erp.dto.payslip.PayslipResponse;
+import com.bruce.erp.model.Employee;
 import com.bruce.erp.service.EmployeeService;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+import com.bruce.erp.service.PayslipService;
+import org.springframework.core.io.Resource;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -26,6 +27,7 @@ import java.util.List;
 public class EmployeeController {
 
     private final EmployeeService employeeService;
+    private final PayslipService payslipService;
 
     @GetMapping
     @Operation(summary = "Get all employees", description = "Get all employees in the system")
@@ -82,5 +84,23 @@ public class EmployeeController {
     @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER', 'EMPLOYEE')")
     public ResponseEntity<EmployeeResponse> getCurrentEmployee() {
         return ResponseEntity.ok(employeeService.getCurrentEmployee());
+    }
+
+    @GetMapping("/me/pending-payments")
+    @Operation(summary = "Get pending salary payments", description = "Get pending salary payments for the current employee")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER', 'EMPLOYEE')")
+    public ResponseEntity<List<PayslipResponse>> getPendingPayments() {
+        Employee currentEmployee = employeeService.getCurrentEmployeeEntity();
+        return ResponseEntity.ok(payslipService.getPendingPayslipsForCurrentEmployee(currentEmployee));
+    }
+
+    @GetMapping("/me/payslips/{payslipId}/download")
+    @Operation(summary = "Download pay slip", description = "Download pay slip for the current employee")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER', 'EMPLOYEE')")
+    public ResponseEntity<Resource> downloadPayslip(
+            @PathVariable Long payslipId,
+            @RequestParam(defaultValue = "txt") String format) {
+        Employee currentEmployee = employeeService.getCurrentEmployeeEntity();
+        return payslipService.downloadPayslip(payslipId, currentEmployee, format);
     }
 }

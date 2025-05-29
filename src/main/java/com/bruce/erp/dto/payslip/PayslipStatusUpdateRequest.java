@@ -1,6 +1,6 @@
 package com.bruce.erp.dto.payslip;
 
-import com.bruce.erp.model.entity.Payslip;
+import com.bruce.erp.model.Payslip;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

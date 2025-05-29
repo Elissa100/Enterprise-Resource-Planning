@@ -1,5 +1,5 @@
 HELP.md
-problem.txt
+require.txt
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

@@ -1,4 +1,4 @@
-package com.bruce.erp.model.entity;
+package com.bruce.erp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

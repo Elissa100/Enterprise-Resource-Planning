@@ -1,6 +1,6 @@
 package com.bruce.erp.repository;
 
-import com.bruce.erp.model.entity.Employee;
+import com.bruce.erp.model.Employee;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.data.jpa.repository.JpaRepository;

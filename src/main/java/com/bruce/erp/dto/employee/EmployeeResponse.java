@@ -1,6 +1,6 @@
 package com.bruce.erp.dto.employee;
 
-import com.bruce.erp.model.entity.Employee;
+import com.bruce.erp.model.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

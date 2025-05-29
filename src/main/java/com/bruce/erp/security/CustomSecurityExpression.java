@@ -1,6 +1,6 @@
 package com.bruce.erp.security;
 
-import com.bruce.erp.model.entity.Employee;
+import com.bruce.erp.model.Employee;
 import com.bruce.erp.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;

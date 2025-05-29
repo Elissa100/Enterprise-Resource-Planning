@@ -1,6 +1,6 @@
 package com.bruce.erp.dto.employment;
 
-import com.bruce.erp.model.entity.Employment;
+import com.bruce.erp.model.Employment;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;

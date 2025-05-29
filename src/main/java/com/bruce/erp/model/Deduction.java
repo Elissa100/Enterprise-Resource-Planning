@@ -1,4 +1,4 @@
-package com.bruce.erp.model.entity;
+package com.bruce.erp.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

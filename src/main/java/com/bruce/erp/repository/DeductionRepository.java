@@ -1,6 +1,6 @@
 package com.bruce.erp.repository;
 
-import com.bruce.erp.model.entity.Deduction;
+import com.bruce.erp.model.Deduction;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

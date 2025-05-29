@@ -1,7 +1,7 @@
 package com.bruce.erp.repository;
 
-import com.bruce.erp.model.entity.Employee;
-import com.bruce.erp.model.entity.Employment;
+import com.bruce.erp.model.Employee;
+import com.bruce.erp.model.Employment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

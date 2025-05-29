@@ -1,7 +1,7 @@
 package com.bruce.erp.dto.payslip;
 
 import com.bruce.erp.dto.employee.EmployeeResponse;
-import com.bruce.erp.model.entity.Payslip;
+import com.bruce.erp.model.Payslip;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

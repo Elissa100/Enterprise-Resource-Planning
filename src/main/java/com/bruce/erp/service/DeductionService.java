@@ -3,7 +3,7 @@ package com.bruce.erp.service;
 import com.bruce.erp.dto.deduction.DeductionRequest;
 import com.bruce.erp.dto.deduction.DeductionResponse;
 import com.bruce.erp.dto.deduction.DeductionUpdateRequest;
-import com.bruce.erp.model.entity.Deduction;
+import com.bruce.erp.model.Deduction;
 import com.bruce.erp.repository.DeductionRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,6 @@
 package com.bruce.erp.dto.employee;
 
-import com.bruce.erp.model.entity.Employee;
+import com.bruce.erp.model.Employee;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;

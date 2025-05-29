@@ -1,6 +1,6 @@
 package com.bruce.erp.dto.deduction;
 
-import com.bruce.erp.model.entity.Deduction;
+import com.bruce.erp.model.Deduction;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

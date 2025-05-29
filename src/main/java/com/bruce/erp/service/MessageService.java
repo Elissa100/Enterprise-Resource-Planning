@@ -1,8 +1,8 @@
 package com.bruce.erp.service;
 
 import com.bruce.erp.dto.message.MessageResponse;
-import com.bruce.erp.model.entity.Message;
-import com.bruce.erp.model.entity.Payslip;
+import com.bruce.erp.model.Message;
+import com.bruce.erp.model.Payslip;
 import com.bruce.erp.repository.EmployeeRepository;
 import com.bruce.erp.repository.MessageRepository;
 import lombok.RequiredArgsConstructor;

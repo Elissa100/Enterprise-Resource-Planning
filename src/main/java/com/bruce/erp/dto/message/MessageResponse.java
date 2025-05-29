@@ -1,7 +1,7 @@
 package com.bruce.erp.dto.message;
 
 import com.bruce.erp.dto.employee.EmployeeResponse;
-import com.bruce.erp.model.entity.Message;
+import com.bruce.erp.model.Message;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

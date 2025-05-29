@@ -6,7 +6,7 @@ import com.bruce.erp.dto.employee.EmployeeUpdateRequest;
 import com.bruce.erp.exception.AuthenticationException;
 import com.bruce.erp.exception.DuplicateResourceException;
 import com.bruce.erp.exception.ResourceNotFoundException;
-import com.bruce.erp.model.entity.Employee;
+import com.bruce.erp.model.Employee;
 import com.bruce.erp.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -69,26 +69,6 @@ public class EmployeeService {
         return EmployeeResponse.fromEntity(employeeRepository.save(employee));
     }
 
-    public EmployeeResponse updateEmployee(Long id, EmployeeRequest request) {
-        var employee = employeeRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee", "id", id));
-
-        // Check if email is being changed and if it already exists
-        if (!employee.getEmail().equals(request.getEmail()) && employeeRepository.existsByEmailIgnoreCase(request.getEmail())) {
-            throw new DuplicateResourceException("Employee", "email", request.getEmail());
-        }
-
-        employee.setFirstName(request.getFirstName());
-        employee.setLastName(request.getLastName());
-        employee.setEmail(request.getEmail());
-        employee.setMobile(request.getMobile());
-        employee.setDateOfBirth(request.getDateOfBirth());
-        employee.setRoles(request.getRoles());
-        employee.setStatus(request.getStatus());
-
-        return EmployeeResponse.fromEntity(employeeRepository.save(employee));
-    }
-
     public EmployeeResponse updateEmployee(Long id, EmployeeUpdateRequest request) {
         var employee = employeeRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee", "id", id));
@@ -138,6 +118,11 @@ public class EmployeeService {
     }
 
     public EmployeeResponse getCurrentEmployee() {
+        Employee employee = getCurrentEmployeeEntity();
+        return EmployeeResponse.fromEntity(employee);
+    }
+
+    public Employee getCurrentEmployeeEntity() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || !authentication.isAuthenticated()) {
             throw new AuthenticationException("User not authenticated");
@@ -148,8 +133,7 @@ public class EmployeeService {
             throw new AuthenticationException("User not found");
         }
 
-        Employee employee = (Employee) principal;
-        return EmployeeResponse.fromEntity(employee);
+        return (Employee) principal;
     }
 
     private String generateEmployeeCode() {

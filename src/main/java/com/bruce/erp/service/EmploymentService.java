@@ -3,7 +3,7 @@ package com.bruce.erp.service;
 import com.bruce.erp.dto.employment.EmploymentRequest;
 import com.bruce.erp.dto.employment.EmploymentResponse;
 import com.bruce.erp.dto.employment.EmploymentUpdateRequest;
-import com.bruce.erp.model.entity.Employment;
+import com.bruce.erp.model.Employment;
 import com.bruce.erp.repository.EmployeeRepository;
 import com.bruce.erp.repository.EmploymentRepository;
 import lombok.RequiredArgsConstructor;

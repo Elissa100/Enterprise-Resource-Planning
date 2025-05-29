@@ -5,7 +5,7 @@ import com.bruce.erp.dto.auth.AuthResponse;
 import com.bruce.erp.dto.auth.RegisterRequest;
 import com.bruce.erp.exception.AuthenticationException;
 import com.bruce.erp.exception.DuplicateResourceException;
-import com.bruce.erp.model.entity.Employee;
+import com.bruce.erp.model.Employee;
 import com.bruce.erp.repository.EmployeeRepository;
 import com.bruce.erp.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
