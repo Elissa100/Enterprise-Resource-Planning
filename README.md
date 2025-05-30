@@ -193,5 +193,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 For any questions or suggestions, please contact:
 
-- 👨‍💻 **Developer**: Bruce
-- 📧 **Email**: brucenkundabagenzi@gmail.com
+- 👨‍💻 **Developer**: Elissa Sibomana
+- 📧 **Email**: sibomanaelissa71@gmail.com
+- 📞 **Phone**/**Whatsapp**: +250796146694

@@ -1,4 +1,4 @@
-package com.bruce.erp;
+package com.elissa.erp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
